@@ -1,0 +1,78 @@
+* { scroll-behavior: smooth; }
+body { background-color: #F7F2E7; }
+
+/* ---- Card-catalog style eyebrow ---- */
+.catalog-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  font-weight: 600;
+  color: #B4892F;
+  border: 1px solid #B4892F;
+  padding: 0.2rem 0.6rem;
+  display: inline-block;
+}
+
+/* ---- Dashed catalog divider ---- */
+.catalog-rule {
+  border-top: 1px dashed #C9BC9E;
+}
+
+/* ---- Signature element: hanging ribbon "Escolha da Thais" ---- */
+.ribbon {
+  position: absolute;
+  top: -6px;
+  right: 22px;
+  width: 34px;
+  padding: 10px 0 16px;
+  background: linear-gradient(180deg, #C79A3D 0%, #9A7326 100%);
+  color: #F7F2E7;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  text-align: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  box-shadow: 0 6px 10px -4px rgba(0,0,0,0.35);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%);
+  transform: rotate(1.5deg);
+  z-index: 10;
+}
+
+/* ---- Carousel ---- */
+.carousel {
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar { display: none; }
+.carousel > * { scroll-snap-align: start; }
+
+/* ---- Product card hover reveal ---- */
+.product-card .reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.product-card:hover .reveal,
+.product-card:focus-within .reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+.product-card .cover-img {
+  transition: transform 0.6s ease;
+}
+.product-card:hover .cover-img {
+  transform: scale(1.045);
+}
+
+/* ---- Focus visibility ---- */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid #B4892F;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
