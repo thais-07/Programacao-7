@@ -10,6 +10,7 @@
             <label for="usr">Usuário</label>
             <input type="text" placeholder="Digite o usr" name="usr" class="form-control" required>
             <label for="senha">Senha</label>
+            
             <input type="password" class="form-control" id="pwd" placeholder="Entre com senha" name="senha">
             <label for="email">Email</label>
             <input type="email" name="email" class="form-control" required>
